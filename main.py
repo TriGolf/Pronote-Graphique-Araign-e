@@ -40,6 +40,8 @@ df = pd.DataFrame(dict(
 fig = px.line_polar(df, r = 'value', theta = 'variable', line_close = True,
                     markers = True,text = 'value')
 
+
+title = f"Moyenne générale : {client.current_period.overall_average}"
 max_limit = 20
 fig.update_layout(
     polar=dict(
@@ -47,9 +49,14 @@ fig.update_layout(
             visible=True,
             range=[0, max_limit]
         ),
-    )
+    ),
+    title=title,  # Titre du graphique
+    title_x=0.5,  # Position horizontale du titre
+    title_y=0.02,  # Position verticale du titre (au-dessus du graphique)
 )
 
 fig.update_traces(textposition = 'top center')
 
 fig.show() 
+
+
