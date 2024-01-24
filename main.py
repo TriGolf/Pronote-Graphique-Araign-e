@@ -15,6 +15,9 @@ while True :
             username=utilisateur, # votre identifiant ENT !!!
             password=mot_de_passe, # votre mot de passe
             ent=ac_orleans_tours)
+        
+        print(f'Vous êtes conncté(e) en tant que {client.info.name} !')
+        
         break
     except :
         print("Les identifiants sont invalides, veuillez rééssayer")
