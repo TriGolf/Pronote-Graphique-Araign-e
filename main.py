@@ -3,11 +3,15 @@ from pronotepy.ent import ac_orleans_tours
 import datetime
 import plotly.express as px
 import pandas as pd
+import getpass
+
+utilisateur = input('Veuillez entrer votre nom d\'utilisateur : ')
+mot_de_passe = getpass.getpass("Veuillez entrer votre mot de passe : ")
 
 client = pronotepy.Client(
     'https://0450047g.index-education.net/pronote/eleve.html',
-    username='nom d\'utilisateur', # votre identifiant ENT !!! ex : p.nomX
-    password="mot de passe", # votre mot de passe
+    username=utilisateur, # votre identifiant ENT !!!
+    password=mot_de_passe, # votre mot de passe
     ent=ac_orleans_tours)
 
 
@@ -36,8 +40,7 @@ df = pd.DataFrame(dict(
 fig = px.line_polar(df, r = 'value', theta = 'variable', line_close = True,
                     markers = True,text = 'value')
 
-fig.update_traces(textposition = 'top center')
-
+max_limit = 20
 fig.update_layout(
     polar=dict(
         radialaxis=dict(
@@ -47,5 +50,6 @@ fig.update_layout(
     )
 )
 
-fig.show()
+fig.update_traces(textposition = 'top center')
 
+fig.show() 
