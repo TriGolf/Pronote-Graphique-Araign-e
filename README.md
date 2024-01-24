@@ -15,3 +15,7 @@ Si cela ne marche pas, essayez de remplacer pip par pip3 :
 `pip3 install pronotepy`
 
 `pip3 install plotly`
+
+## Exécution
+Quand vous éxécuterez le code, le graphique apparaîtra dans votre navigateur web (en ouvrant une
+nouvelle fenêtre)
