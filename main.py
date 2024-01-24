@@ -5,14 +5,19 @@ import plotly.express as px
 import pandas as pd
 import getpass
 
-utilisateur = input('Veuillez entrer votre nom d\'utilisateur : ')
-mot_de_passe = getpass.getpass("Veuillez entrer votre mot de passe : ")
+while True :
+    try :
+        utilisateur = input('Veuillez entrer votre nom d\'utilisateur : ')
+        mot_de_passe = getpass.getpass("Veuillez entrer votre mot de passe : ")
 
-client = pronotepy.Client(
-    'https://0450047g.index-education.net/pronote/eleve.html',
-    username=utilisateur, # votre identifiant ENT !!!
-    password=mot_de_passe, # votre mot de passe
-    ent=ac_orleans_tours)
+        client = pronotepy.Client(
+            'https://0450047g.index-education.net/pronote/eleve.html',
+            username=utilisateur, # votre identifiant ENT !!!
+            password=mot_de_passe, # votre mot de passe
+            ent=ac_orleans_tours)
+        break
+    except :
+        print("Les identifiants sont invalides, veuillez rééssayer")
 
 
 subjects = []
