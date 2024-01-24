@@ -49,7 +49,7 @@ fig = px.line_polar(df, r = 'value', theta = 'variable', line_close = True,
                     markers = True,text = 'value')
 
 
-title = f"Moyenne générale : {client.current_period.overall_average}"
+title = f"Moyenne générale : {client.current_period.overall_average} ||  Moyenne générale de la classe : {client.current_period.class_overall_average}"
 max_limit = 20
 fig.update_layout(
     polar=dict(
