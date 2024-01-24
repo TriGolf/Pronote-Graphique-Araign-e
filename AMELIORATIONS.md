@@ -7,4 +7,4 @@ Ce n'est peut être pas très clair mais essayez si vous n'avez aucune moyenne d
 
 ## 2
 Mettre les moyennes de la classe. C'est faisable sur plotly mais il faut d'abord les exporter via 
-pronotepy (ce que je ne sais pas faire)
+pronotepy (mais je ne comprend pas comment faire)
