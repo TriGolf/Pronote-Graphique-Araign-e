@@ -36,5 +36,12 @@ df = pd.DataFrame(dict(
 fig = px.line_polar(df, r = 'value', theta = 'variable', line_close = True,
                     markers = True)
 
+fig.update_layout(polar=dict(
+    radialaxis = dict(
+        visible=True,
+        range[0,max_limit]
+    )
+))
+
 fig.show()
 
