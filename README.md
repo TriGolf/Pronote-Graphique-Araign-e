@@ -21,5 +21,5 @@ Si cela ne marche pas, essayez de remplacer pip par pip3 :
 `pip3 install pandas`
 
 ## Exécution
-Quand vous éxécuterez le code, le graphique apparaîtra dans votre navigateur web (en ouvrant une
+Quand vous éxécuterez le code, il faudra rentrer vos identifiants et le graphique apparaîtra dans votre navigateur web (en ouvrant une
 nouvelle fenêtre)
