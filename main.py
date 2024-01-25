@@ -70,7 +70,7 @@ fig.update_layout(
         ),
     ),
     title=title,  # Titre du graphique
-    title_x=0.5,  # Position horizontale du titre
+    title_x=0.47,  # Position horizontale du titre
     title_y=0.02,  # Position verticale du titre (au-dessus du graphique)
 )
 
