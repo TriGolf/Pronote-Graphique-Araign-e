@@ -26,12 +26,14 @@ while True :
 subjects = []
 averages = []
 class_averages = []
+meilleurs_moyennes = []
 
 
 for moyenne in client.current_period.averages :
     averages.append(moyenne.student)
     subjects.append(moyenne.subject.name)
     class_averages.append(moyenne.class_average)
+    meilleurs_moyennes.append(moyenne.max)
 
 
 def convert(liste) :
@@ -43,17 +45,23 @@ def convert(liste) :
 
 averages = convert(averages)
 class_averages = convert(class_averages)
+meilleurs_moyennes = convert(meilleurs_moyennes)
 
 groupe = []
-for x in range(len(subjects)*2) :
-    if x <= len(subjects)-1 :
+for x in range(len(subjects)*3) :
+    if x < len(subjects) :
         groupe.append('Vos moyennes')
     
-    else : groupe.append('Moyennes de classe')
+    elif x >= (len(subjects)) and x < (len(subjects)*2) :
+        groupe.append('Moyennes de classe')
+    
+    else :
+        groupe.append('Meilleures moyennes')
+
 
 df = pd.DataFrame(dict(
-    value = averages+class_averages,
-    variable = subjects+subjects,
+    value = averages+class_averages+meilleurs_moyennes,
+    variable = subjects+subjects+subjects,
     group = groupe))
            
 fig = px.line_polar(df, r = 'value', theta = 'variable', line_close = True,
@@ -74,8 +82,6 @@ fig.update_layout(
     title_y=0.02,  # Position verticale du titre (au-dessus du graphique)
 )
 
-fig.update_traces(textposition = 'top center', fill = 'toself')
+fig.update_traces(textposition = 'top center')
 
-fig.show() 
-
-
+fig.show()
